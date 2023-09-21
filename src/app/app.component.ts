@@ -11,7 +11,7 @@ export class AppComponent {
   hide:any = true;
 
 
-  lbl_login:string="Iniciar sesion";
+  lbl_login:string="Iniciar sesión";
   public lbl_usuario : string = environment.usuario;
   public lbl_contrasena : string = environment.lbl_pass;
 

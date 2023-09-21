@@ -24,7 +24,7 @@ import { AppComponent } from './app.component';
     MatCardModule,
     MatSelectModule,
     MatInputModule,
-    MatFormFieldModule,
+    MatFormFieldModule
 
 
   ],
