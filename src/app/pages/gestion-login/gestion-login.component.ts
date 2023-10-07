@@ -34,4 +34,8 @@ export class GestionLoginComponent implements OnInit{
 
   }
 
+  hacerClick(){
+    console.log('hola');
+  }
+
 }
