@@ -24,8 +24,11 @@ export const environment = {
 
   //etiquetas formularios
   usuario: 'Usuario',
-  lbl_pass: 'Ingrese su contraseña'
+  lbl_pass: 'Ingrese su contraseña',
   //msn
 
-  //
+
+  //credenciales
+  user: 'admin',
+  pass: 'admin'
 }

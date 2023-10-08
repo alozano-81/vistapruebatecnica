@@ -25,27 +25,29 @@ import { MatTooltipModule } from '@angular/material/tooltip';
 //import { NgSelectModule } from '@ng-select/ng-select';
 //import { DataTablesModule } from 'angular-datatables';
 //import { NgxMaskModule } from 'ngx-mask';
-//import { NgxSpinnerModule } from "ngx-spinner";
-//import { ToastrModule } from 'ngx-toastr';
+import { NgxSpinnerModule } from "ngx-spinner";
+import { ToastrModule } from 'ngx-toastr';
 
 
 import { MatListModule } from '@angular/material/list';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
-import { ComponentsModule } from './components/material/src/app/components/components.module';
+import { SpinerComponent } from './components/spiner/spiner.component';
 import { TemplateComponent } from './components/template/template.component';
+import { GenerarTurnosComponent } from './generar-turnos/generar-turnos.component';
+import { GestionLoginComponent } from './gestion-login/gestion-login.component';
 import { PagesRoutingModule } from './pages-routing.module';
 import { PagesComponent } from './pages.component';
-import { GestionLoginComponent } from './gestion-login/gestion-login.component';
 @NgModule({
   declarations: [
     TemplateComponent,
     PagesComponent,
     GestionLoginComponent,
-   // SpinerComponent
+    GenerarTurnosComponent,
+    SpinerComponent
   ],
   imports: [
     CommonModule,
-    ComponentsModule,
+    //ComponentsModule,
     PagesRoutingModule,
     FormsModule,
     ReactiveFormsModule,
@@ -62,7 +64,7 @@ import { GestionLoginComponent } from './gestion-login/gestion-login.component';
     MatDividerModule,
     HttpClientModule,
     //DataTablesModule,
-    //ToastrModule.forRoot(),
+    ToastrModule.forRoot(),
     MatIconModule,
     MatTooltipModule,
     MatBottomSheetModule,
@@ -70,7 +72,7 @@ import { GestionLoginComponent } from './gestion-login/gestion-login.component';
     MatRadioModule,
     MatButtonModule,
     MatProgressSpinnerModule,
-    //NgxSpinnerModule,
+    NgxSpinnerModule,
     //NgxMaskModule.forRoot(),
     MatProgressBarModule,
     MatExpansionModule,
