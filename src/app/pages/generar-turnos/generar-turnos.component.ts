@@ -1,10 +1,11 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 //import { NgxSpinnerService } from 'ngx-spinner';
 import { ToastrService } from 'ngx-toastr';
 import { ServiciosService } from 'src/app/services/servicios.service';
 ///import { SpinerComponent } from '../components/spiner/spiner.component';
-
+import { DataTableDirective } from 'angular-datatables';
+import { Subject } from 'rxjs';
 @Component({
   selector: 'app-generar-turnos',
   templateUrl: './generar-turnos.component.html',
@@ -17,9 +18,20 @@ export class GenerarTurnosComponent {
   public selectedS:any;
   comercios: any[] = [];
   servicios: any[] = [];
+  registrosArray: any[] = [];
+  usuario:any;
+
+  //parametros tabla
+  dtOptionss: DataTables.Settings = {};
+  dtTriggers = new Subject();
+
+  @ViewChild(DataTableDirective, { static: false })
+  dtElements: any = DataTableDirective;
+  isDtInitializeds: boolean = false;
+
 
   constructor(
-    public serviceLogin : ServiciosService,
+    public serviciosGenerales : ServiciosService,
     /*
     private route : ActivatedRoute,
     private spinner : NgxSpinnerService,
@@ -40,12 +52,23 @@ export class GenerarTurnosComponent {
 
     //public spin: SpinerComponent = new SpinerComponent(this.spinner);
   ngOnInit():void {
-    this.formTurnos = this.serviceLogin.cargarFormTurnos();
+    this.usuario = localStorage.getItem('user')?.toString();
+    this.formTurnos = this.serviciosGenerales.cargarFormTurnos();
     this.cargarComercios(1);
   }
 
 
-  cargarComercios(id:any){}
+  cargarComercios(id:any){
+    /**
+   * Obtener listado de comercios
+    */
+         this.comercios = [];
+         this.serviciosGenerales.getComercios().subscribe(
+          (result) => {
+             this.comercios = result;
+         });
+
+  }
 
   enviarDatos(){
     console.log('');

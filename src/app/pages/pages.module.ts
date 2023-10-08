@@ -31,6 +31,7 @@ import { ToastrModule } from 'ngx-toastr';
 
 import { MatListModule } from '@angular/material/list';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { MatToolbarModule } from '@angular/material/toolbar';
 import { SpinerComponent } from './components/spiner/spiner.component';
 import { TemplateComponent } from './components/template/template.component';
 import { GenerarTurnosComponent } from './generar-turnos/generar-turnos.component';
@@ -79,7 +80,8 @@ import { PagesComponent } from './pages.component';
     MatTabsModule,
     MatSlideToggleModule,
     MatListModule,
-    MatDatepickerModule
+    MatDatepickerModule,
+    MatToolbarModule
   ],
   exports: [TemplateComponent],
 })
